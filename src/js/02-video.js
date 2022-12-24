@@ -7,7 +7,9 @@ player.on('play', function() {
     console.log('played the video!');
 });
 
-player.pause("play", () => console.log("PAUSED"));
+player.pause('play', function() {
+    console.log('PAUSE!');
+});
 
 player.getVideoTitle().then(function(title) {
     console.log('title:', title);
