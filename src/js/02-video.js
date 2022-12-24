@@ -7,8 +7,13 @@ player.on('play', function() {
     console.log('played the video!');
 });
 
-player.pause().then(console.log("PAUSED"));
-
+player.on('pause', function() {
+    console.log('PAUSED!');
+    player.getCurrentTime().then(function (seconds) {
+        console.log(`Видео остановлено на ${seconds}`);
+    });
+});
 player.getVideoTitle().then(function(title) {
     console.log('title:', title);
 });
+
