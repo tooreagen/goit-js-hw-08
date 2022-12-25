@@ -1,0 +1,2 @@
+!function(){var e,a,t,l;document.querySelector(".feedback-form").addEventListener("input",(a=e.target.elements,t=a.email,l=a.message,localStorage.setItem("email",t.value),localStorage.setItem("message",l.value),console.log("Значение поля email = ",localStorage.getItem("email")),void console.log("Значение поля message = ",localStorage.getItem("message"))))}();
+//# sourceMappingURL=03-feedback.af0b6f08.js.map
