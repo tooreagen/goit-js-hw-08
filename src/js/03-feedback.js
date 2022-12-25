@@ -9,7 +9,7 @@ const saveDataToStorage = (event) => {
     console.log("Значение поля message = ", localStorage.getItem("message"));
 }
 
-form.addEventListener("input", saveDataToStorage());
+form.addEventListener("input", saveDataToStorage);
 
 
 
