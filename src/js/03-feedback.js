@@ -1,7 +1,7 @@
 const form = document.querySelector(".feedback-form");
 
 const saveDataToStorage = (event) => {
-    const { elements: { email, message } } = event.target;
+    const { elements: { email, message } } = event.currentTarget;
     localStorage.setItem("email", email.value);
     localStorage.setItem("message", message.value);
 
