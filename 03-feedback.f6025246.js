@@ -1,0 +1,2 @@
+document.querySelector(".feedback-form").addEventListener("input",(function(e){var a=e.currentTarget.elements,t=a.email,l=a.message;localStorage.setItem("email",t.value),localStorage.setItem("message",l.value),console.log("Значение поля email = ",localStorage.getItem("email")),console.log("Значение поля message = ",localStorage.getItem("message"))}));
+//# sourceMappingURL=03-feedback.f6025246.js.map
