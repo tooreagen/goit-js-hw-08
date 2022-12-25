@@ -4,6 +4,7 @@ const saveDataToStorage = (event) => {
     const { elements: { email, message } } = event.currentTarget;
     localStorage.setItem("feedback-form-state", event.currentTarget.elements);
     console.log(email, message);
+    console.log(event.currentTarget);
     // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem("feedback-form-state")));
     // console.log("Значение elements = ", localStorage.getItem("feedback-form-state"));
 }
