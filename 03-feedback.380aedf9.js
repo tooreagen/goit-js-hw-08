@@ -1,2 +1,0 @@
-document.querySelector(".feedback-form").addEventListener("input",(function(e){localStorage.setItem("feedback-form-state",e.currentTarget.elements),console.log("Значение elements с stringify = ",JSON.stringify(localStorage.getItem("feedback-form-state"))),console.log("Значение elements = ",localStorage.getItem("feedback-form-state"))})),console.log(4);
-//# sourceMappingURL=03-feedback.380aedf9.js.map
