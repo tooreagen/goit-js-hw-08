@@ -4,12 +4,13 @@ const saveDataToStorage = (event) => {
     // const { elements: { email, message } } = event.currentTarget;
     localStorage.setItem("feedback-form-state", event.currentTarget.elements);
 
-    console.log("Значение elements = ", localStorage.getItem("feedback-form-state"));}
+    console.log("Значение elements = ", JSON.stringify(localStorage.getItem("feedback-form-state")));
+}
 
 form.addEventListener("input", saveDataToStorage);
 
 
-console.log(2);
+console.log(3);
 
 
 // В HTML есть разметка формы. Напиши скрипт который будет сохранять значения полей в локальное хранилище когда пользователь что-то печатает.
