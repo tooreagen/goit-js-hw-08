@@ -1,0 +1,2 @@
+!function(){console.log(18);var e,a=document.querySelector(".feedback-form"),l="feedback-form-state";e=JSON.parse(localStorage.getItem(l)||(a.email.value="пустые поля")),a.email.value=e.email,a.message.value=e.message,console.log(e),a.addEventListener("input",(function(e){var a=e.currentTarget.elements,t=a.email,o=a.message,s={email:t.value,message:o.value};localStorage.setItem(l,JSON.stringify(s))}))}();
+//# sourceMappingURL=03-feedback.0cc6fbad.js.map
