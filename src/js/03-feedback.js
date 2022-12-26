@@ -1,4 +1,4 @@
-console.log(19);
+console.log(100);
 import throttle from "lodash.throttle";
 const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
@@ -45,5 +45,5 @@ function submitForm(event) {
 
 updateDataUser();
 
-form.addEventListener("input", throttle(saveDataToStorage(event), 500));
+form.addEventListener("input", throttle(saveDataToStorage, 500));
 form.addEventListener("submit", submitForm);
