@@ -1,2 +1,0 @@
-console.log(18);const e=document.querySelector(".feedback-form");!function(){const a=JSON.parse(localStorage.getItem("feedback-form-state"))||(e.email.value="ПУТИН ХУЙЛО");e.email.value=a.email,e.message.value=a.message,console.log(a)}(),e.addEventListener("input",(e=>{const{elements:{email:a,message:t}}=e.currentTarget,l={email:a.value,message:t.value};localStorage.setItem("feedback-form-state",JSON.stringify(l))}));
-//# sourceMappingURL=03-feedback.3142ba47.js.map
