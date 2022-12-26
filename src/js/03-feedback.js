@@ -13,7 +13,7 @@ const KEY_STORAGE = "feedback-form-state";
 //     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
 // }
 
-function saveDataToStorage(event) {
+const saveDataToStorage = (event) => {
     const { elements: { email, message } } = event.currentTarget;
     const dataFromUser = {
         email: email.value,
