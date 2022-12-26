@@ -16,16 +16,25 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || "");
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE)) || "";
 
     form.email.value = dataFromStorage.email;
     form.message.value = dataFromStorage.message;
     console.log(dataFromStorage);
 }
 
+function saveMessage(event) {
+    event.preventDefault();
+    localStorage.clear();
+    form.reset();
+}
+
 updateDataUser();
 
 form.addEventListener("input", saveDataToStorage);
+form.addEventListener("submit", saveMessage);
+
+
 
 
 
