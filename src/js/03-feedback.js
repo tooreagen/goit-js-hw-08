@@ -9,13 +9,19 @@ const saveDataToStorage = (event) => {
     }
 
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
-    console.log("Object= ", dataFromUser);
-    // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem(KEY_STORAGE)));
-    console.log("Значение объекта с хранилища = ", localStorage.getItem(KEY_STORAGE));
+    // console.log("Object= ", dataFromUser);
+    // console.log("Значение объекта с хранилища = ", localStorage.getItem(KEY_STORAGE));
 }
 
+function updateDataUser() {
+    dataFromStorage = localStorage.getItem(LOCALSTORAGE_KEY) || "";
+    console.log(dataFromStorage);
+}
+
+updateDataUser();
+
 form.addEventListener("input", saveDataToStorage);
-console.log(13);
+console.log(15);
 
 
 // const output = document.querySelector("#output");
@@ -33,36 +39,4 @@ console.log(13);
 
 // function updateOutput() {
 //   output.textContent = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// В HTML есть разметка формы. Напиши скрипт который будет сохранять значения полей в локальное хранилище когда пользователь что-то печатает.
-
-// const regFormVerification = (event) => {
-//     event.preventDefault();
-//     const { elements: { email, password } } = event.currentTarget;
-
-//     if (email.value === "" || password.value === "") {
-//         alert("Заповніть всі поля!");
-//         return;
-//     }
-//     const userData = {
-//         email: email.value,
-//         password: password.value,
-//     }
-//     console.log(userData);
-//     event.currentTarget.reset();
-//     }
-
-// form.addEventListener("submit", regFormVerification);
+// 
