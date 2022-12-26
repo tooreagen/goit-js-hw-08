@@ -1,2 +1,0 @@
-!function(){var e=document.querySelector(".feedback-form"),o="feedback-form-state";e.addEventListener("input",(function(e){var t=e.currentTarget.elements,a=t.email,l=t.message,c={email:a.value,message:l.value};localStorage.setItem(o,c),console.log("Object= ",c),console.log("Значение объекта с хранилища = ",localStorage.getItem(o))})),console.log(13)}();
-//# sourceMappingURL=03-feedback.253a437b.js.map
