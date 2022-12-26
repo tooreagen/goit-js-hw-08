@@ -14,7 +14,7 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    dataFromStorage = localStorage.getItem(LOCALSTORAGE_KEY) || "";
+    dataFromStorage = localStorage.getItem(KEY_STORAGE) || "";
     console.log(dataFromStorage);
 }
 
