@@ -16,7 +16,7 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || "");
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || "пустые поля");
 
     form.email.value = dataFromStorage.email;
     form.message.value = dataFromStorage.message;
