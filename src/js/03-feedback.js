@@ -1,17 +1,17 @@
-console.log(17);
-
+console.log(18);
+import throttle from "lodash.throttle";
 const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
 
-const saveDataToStorage = (event) => {
+const saveDataToStorage = throttle((event) => {
     const { elements: { email, message } } = event.currentTarget;
     const dataFromUser = {
         email: email.value,
         message: message.value,
     }
-
+    console.log(JSON.stringify(dataFromUser));
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
-}
+}, 500);
 
 function updateDataUser() {
     const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
@@ -37,24 +37,3 @@ updateDataUser();
 
 form.addEventListener("input", saveDataToStorage);
 form.addEventListener("submit", submitForm);
-
-
-
-
-
-// const output = document.querySelector("#output");
-// const LOCALSTORAGE_KEY = "goit-example-message";
-
-// updateOutput();
-// form.addEventListener("submit", saveMessage);
-
-// function saveMessage(evt) {
-//   evt.preventDefault();
-//   localStorage.setItem(LOCALSTORAGE_KEY, form.elements.message.value);
-//   updateOutput();
-//   form.reset();
-// }
-
-// function updateOutput() {
-//   output.textContent = localStorage.getItem(LOCALSTORAGE_KEY) || "";
-// 
