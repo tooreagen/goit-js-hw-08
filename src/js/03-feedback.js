@@ -3,7 +3,7 @@ import throttle from "lodash.throttle";
 const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
 
-const saveDataToStorage = throttle((event) => {
+const saveDataToStorage = (event) => {
     const { elements: { email, message } } = event.currentTarget;
     const dataFromUser = {
         email: email.value,
@@ -11,7 +11,7 @@ const saveDataToStorage = throttle((event) => {
     }
     console.log(JSON.stringify(dataFromUser));
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
-}, 500);
+}
 
 function updateDataUser() {
     const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
