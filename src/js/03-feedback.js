@@ -8,16 +8,14 @@ const saveDataToStorage = (event) => {
         message: message.value,
     }
 
-    localStorage.setItem(KEY_STORAGE, event.currentTarget.elements);
-    console.log(email.value, message.value);
-    console.dir(event.currentTarget);
+    localStorage.setItem(KEY_STORAGE, dataFromUser);
     console.log("Object= ", dataFromUser);
-    // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem("feedback-form-state")));
-    // console.log("Значение elements = ", localStorage.getItem("feedback-form-state"));
+    // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem(KEY_STORAGE)));
+    console.log("Значение объекта с хранилища = ", localStorage.getItem(KEY_STORAGE));
 }
 
 form.addEventListener("input", saveDataToStorage);
-console.log(12);
+console.log(13);
 
 
 // const output = document.querySelector("#output");
