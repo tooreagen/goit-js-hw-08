@@ -2,17 +2,22 @@ const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
 
 const saveDataToStorage = (event) => {
-    const  { elements: { email, message } } = event.currentTarget;
+    const { elements: { email, message } } = event.currentTarget;
+    const dataFromUser = {
+        email: email.value,
+        message: message.value,
+    }
+
     localStorage.setItem(KEY_STORAGE, event.currentTarget.elements);
     console.log(email.value, message.value);
     console.dir(event.currentTarget);
-    console.log("Object= ", obj);
+    console.log("Object= ", dataFromUser);
     // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem("feedback-form-state")));
     // console.log("Значение elements = ", localStorage.getItem("feedback-form-state"));
 }
 
 form.addEventListener("input", saveDataToStorage);
-console.log(11);
+console.log(12);
 
 
 // const output = document.querySelector("#output");
