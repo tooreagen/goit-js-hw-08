@@ -16,7 +16,7 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || (form.email.value="пустые поля"));
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE)) || (form.email.value="ПУТИН ХУЙЛО");
 
     form.email.value = dataFromStorage.email;
     form.message.value = dataFromStorage.message;
