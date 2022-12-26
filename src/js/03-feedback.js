@@ -1,3 +1,5 @@
+console.log(16);
+
 const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
 
@@ -14,14 +16,17 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    const dataFromStorage = localStorage.getItem(KEY_STORAGE) || "";
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || "");
+
+    form.email.value = dataFromStorage.email;
+    form.message.value = dataFromStorage.message;
     console.log(dataFromStorage);
 }
 
 updateDataUser();
 
 form.addEventListener("input", saveDataToStorage);
-console.log(15);
+
 
 
 // const output = document.querySelector("#output");
