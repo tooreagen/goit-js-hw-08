@@ -1,4 +1,4 @@
-console.log(18);
+console.log(16);
 
 const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
@@ -16,7 +16,7 @@ const saveDataToStorage = (event) => {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE)) || (form.email.value="ПУТИН ХУЙЛО");
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE) || "");
 
     form.email.value = dataFromStorage.email;
     form.message.value = dataFromStorage.message;
