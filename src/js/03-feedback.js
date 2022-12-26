@@ -8,7 +8,7 @@ const saveDataToStorage = (event) => {
         message: message.value,
     }
 
-    localStorage.setItem(KEY_STORAGE, dataFromUser);
+    localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
     console.log("Object= ", dataFromUser);
     // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem(KEY_STORAGE)));
     console.log("Значение объекта с хранилища = ", localStorage.getItem(KEY_STORAGE));
