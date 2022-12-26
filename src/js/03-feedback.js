@@ -1,18 +1,47 @@
 const form = document.querySelector(".feedback-form");
+const KEY_STORAGE = "feedback-form-state";
 
 const saveDataToStorage = (event) => {
-    const { elements: { email, message } } = event.currentTarget;
-    localStorage.setItem("feedback-form-state", event.currentTarget.elements);
+    const obj = { elements: { email, message } } = event.currentTarget;
+    localStorage.setItem(KEY_STORAGE, event.currentTarget.elements);
     console.log(email.value, message.value);
     console.dir(event.currentTarget);
+    console.log("Object= ", obj);
     // console.log("Значение elements с stringify = ", JSON.stringify(localStorage.getItem("feedback-form-state")));
     // console.log("Значение elements = ", localStorage.getItem("feedback-form-state"));
 }
 
 form.addEventListener("input", saveDataToStorage);
+console.log(10);
 
 
-console.log(9);
+// const output = document.querySelector("#output");
+// const LOCALSTORAGE_KEY = "goit-example-message";
+
+// updateOutput();
+// form.addEventListener("submit", saveMessage);
+
+// function saveMessage(evt) {
+//   evt.preventDefault();
+//   localStorage.setItem(LOCALSTORAGE_KEY, form.elements.message.value);
+//   updateOutput();
+//   form.reset();
+// }
+
+// function updateOutput() {
+//   output.textContent = localStorage.getItem(LOCALSTORAGE_KEY) || "";
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 
 // В HTML есть разметка формы. Напиши скрипт который будет сохранять значения полей в локальное хранилище когда пользователь что-то печатает.
