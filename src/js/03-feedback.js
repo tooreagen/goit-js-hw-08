@@ -11,21 +11,24 @@ const saveDataToStorage = (event) => {
     }
 
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
-    // console.log("Object= ", dataFromUser);
-    // console.log("Значение объекта с хранилища = ", localStorage.getItem(KEY_STORAGE));
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE)) || "";
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
 
-    form.email.value = dataFromStorage.email;
-    form.message.value = dataFromStorage.message;
-    console.log(dataFromStorage);
+    if (dataFromStorage) {
+        form.email.value = dataFromStorage.email;
+        form.message.value = dataFromStorage.message;
+        console.log(dataFromStorage);
+    } else {
+        form.email.value = "";
+        form.message.value = "";
+    }
 }
 
 function saveMessage(event) {
     event.preventDefault();
-    localStorage.clear();
+    localStorage.removeItem(KEY_STORAGE);
     form.reset();
 }
 
