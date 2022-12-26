@@ -45,5 +45,5 @@ function submitForm(event) {
 
 updateDataUser();
 
-form.addEventListener("input", throttle(saveDataToStorage, 500));
+form.addEventListener("input", throttle(saveDataToStorage(event), 500));
 form.addEventListener("submit", submitForm);
