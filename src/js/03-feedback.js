@@ -22,7 +22,7 @@ function updateDataUser() {
 
     if (dataFromStorage) {
         dataFromStorage = JSON.parse(dataFromStorage);
-        Object.entries(dataFromStorage).forEach(data => console.log(data));
+        Object.entries(dataFromStorage).forEach(([name, value]) => console.log(name, value));
     }
 }
 
