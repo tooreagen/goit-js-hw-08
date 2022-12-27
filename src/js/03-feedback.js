@@ -18,14 +18,11 @@ function saveDataToStorage(event) {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
-    console.log("Отображение локального хранидища при загрузке сторинці:",dataFromStorage);
+    let dataFromStorage = localStorage.getItem(KEY_STORAGE);
+
     if (dataFromStorage) {
-        form.email.value = dataFromStorage.email;
-        form.message.value = dataFromStorage.message;
-    } else {
-        form.email.value = "";
-        form.message.value = "";
+        dataFromStorage = JSON.parse(dataFromStorage);
+        Object.entries(dataFromStorage).forEach(data => console.log(data));
     }
 }
 
