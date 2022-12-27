@@ -13,7 +13,7 @@ const KEY_STORAGE = "feedback-form-state";
 //     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
 // }
 
-const saveDataToStorage = (event) => {
+function saveDataToStorage(event) {
     const { elements: { email, message } } = event.currentTarget;
     const dataFromUser = {
         email: email.value,
@@ -40,7 +40,7 @@ function submitForm(event) {
     event.preventDefault();
     console.log(JSON.parse(localStorage.getItem(KEY_STORAGE)));
     localStorage.removeItem(KEY_STORAGE);
-    form.reset();
+    event.currentTarget.reset();
 }
 
 updateDataUser();
