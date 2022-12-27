@@ -22,7 +22,10 @@ function updateDataUser() {
 
     if (dataFromStorage) {
         dataFromStorage = JSON.parse(dataFromStorage);
-        Object.entries(dataFromStorage).forEach(([name, value]) => console.log(name, value));
+        Object.entries(dataFromStorage).forEach(([name, value]) => {
+            form.elements[name].value = value;
+            dataFromUser[name] = value;
+        });
     }
 }
 
