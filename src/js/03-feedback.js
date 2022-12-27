@@ -20,6 +20,9 @@ function updateDataUser() {
     if (dataFromStorage) {
         form.email.value = dataFromStorage.email;
         form.message.value = dataFromStorage.message;
+    } else {
+        form.email.value = "";
+        form.message.value = "";
     }
 }
 
