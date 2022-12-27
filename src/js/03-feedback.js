@@ -10,6 +10,9 @@ form.addEventListener("input", throttle(saveDataToStorage, 500));
 form.addEventListener("submit", submitForm);
 
 function saveDataToStorage(event) {
+    const formData = new FormData(form);
+    console.log(formData);
+
     dataFromUser[event.target.name] = event.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
 }
