@@ -16,11 +16,10 @@ function saveDataToStorage(event) {
 }
 
 function updateDataUser() {
-    //const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
-
-    if (dataFromUser) {
-        form.email.value = dataFromUser.email;
-        form.message.value = dataFromUser.message;
+    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
+    if (dataFromStorage) {
+        form.email.value = dataFromStorage.email;
+        form.message.value = dataFromStorage.message;
     }
 }
 
