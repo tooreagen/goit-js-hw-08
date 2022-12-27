@@ -10,11 +10,6 @@ form.addEventListener("input", throttle(saveDataToStorage, 500));
 form.addEventListener("submit", submitForm);
 
 function saveDataToStorage(event) {
-    // const dataFromUser = {
-    //     email: form.email.value,
-    //     message: form.message.value,
-    // }
-
     dataFromUser[event.target.name] = event.target.value;
     console.log(dataFromUser);
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
@@ -26,10 +21,11 @@ function updateDataUser() {
     if (dataFromStorage) {
         form.email.value = dataFromStorage.email;
         form.message.value = dataFromStorage.message;
-    } else {
-        form.email.value = "";
-        form.message.value = "";
     }
+    // else {
+    //     form.email.value = "";
+    //     form.message.value = "";
+    // }
 }
 
 function submitForm(event) {
