@@ -12,6 +12,7 @@ form.addEventListener("submit", submitForm);
 function saveDataToStorage(event) {
     dataFromUser[event.target.name] = event.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
+    console.log(dataFromUser);
 }
 
 function updateDataUser() {
