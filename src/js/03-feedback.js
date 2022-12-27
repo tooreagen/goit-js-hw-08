@@ -16,21 +16,17 @@ function saveDataToStorage(event) {
 }
 
 function updateDataUser() {
-    const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
+    //const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
 
-    if (dataFromStorage) {
-        form.email.value = dataFromStorage.email;
-        form.message.value = dataFromStorage.message;
+    if (dataFromUser) {
+        form.email.value = dataFromUser.email;
+        form.message.value = dataFromUser.message;
     }
-    // else {
-    //     form.email.value = "";
-    //     form.message.value = "";
-    // }
 }
 
 function submitForm(event) {
     event.preventDefault();
-    console.log(JSON.parse(localStorage.getItem(KEY_STORAGE)));
+    console.log(dataFromUser);
     localStorage.removeItem(KEY_STORAGE);
     event.currentTarget.reset();
 }
