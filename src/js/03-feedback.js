@@ -11,7 +11,7 @@ form.addEventListener("submit", submitForm);
 
 function saveDataToStorage(event) {
     const formData = new FormData(form);
-    console.log(formData);
+    formData.forEach(data => console.log(data));
 
     dataFromUser[event.target.name] = event.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
