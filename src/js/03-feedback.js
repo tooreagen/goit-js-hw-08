@@ -11,17 +11,20 @@ form.addEventListener("submit", submitForm);
 
 function saveDataToStorage(event) {
     dataFromUser[event.target.name] = event.target.value;
-    console.log(dataFromUser);
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
 }
 
 function updateDataUser() {
     const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
-    if (dataFromStorage) {
+    if (dataFromStorage.email) {
         form.email.value = dataFromStorage.email;
-        form.message.value = dataFromStorage.message;
     } else {
         form.email.value = "";
+    }
+    
+    if (dataFromStorage.message) {
+        form.message.value = dataFromStorage.message;
+    } else {
         form.message.value = "";
     }
 }
