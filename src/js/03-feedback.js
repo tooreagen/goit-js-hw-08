@@ -10,8 +10,8 @@ form.addEventListener("input", throttle(saveDataToStorage, 500));
 form.addEventListener("submit", submitForm);
 
 function saveDataToStorage(event) {
-    const formData = new FormData(form);
-    formData.forEach((value, name) => console.log(value, name));
+    // const formData = new FormData(form);
+    // formData.forEach((value, name) => console.log(value, name));
 
     dataFromUser[event.target.name] = event.target.value;
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
@@ -19,6 +19,7 @@ function saveDataToStorage(event) {
 
 function updateDataUser() {
     const dataFromStorage = JSON.parse(localStorage.getItem(KEY_STORAGE));
+    console.log("Отображение локального хранидища при загрузке сторинці:",dataFromStorage);
     if (dataFromStorage) {
         form.email.value = dataFromStorage.email;
         form.message.value = dataFromStorage.message;
