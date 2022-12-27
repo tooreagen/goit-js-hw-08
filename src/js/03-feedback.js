@@ -54,4 +54,4 @@ form.addEventListener("input", saveDataToStorage, 500);
 
 
 //form.addEventListener("input", saveDataToStorage);
-form.addEventListener("submit", submitForm);
+throttle(form.addEventListener("submit", submitForm),1000);
