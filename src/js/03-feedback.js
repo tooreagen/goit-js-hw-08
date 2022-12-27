@@ -45,13 +45,11 @@ function submitForm(event) {
 
 updateDataUser();
 
-form.addEventListener("input", saveDataToStorage, 500);
+form.addEventListener("input", throttle(saveDataToStorage, 500));
 
 // form.addEventListener("scroll", throttle(() => {
 //     console.log("Scroll handler call every 300ms");
 //   }, 300)
 // );
 
-
-//form.addEventListener("input", saveDataToStorage);
-throttle(form.addEventListener("submit", submitForm),1000);
+form.addEventListener("submit", submitForm);
