@@ -4,10 +4,10 @@ const form = document.querySelector(".feedback-form");
 const KEY_STORAGE = "feedback-form-state";
 
 function saveDataToStorage(event) {
-    const { elements: { email, message } } = event.target;
+    // const { elements: { email, message } } = event.target;
     const dataFromUser = {
-        email: email.value,
-        message: message.value,
+        email: form.email.value,
+        message: form.message.value,
     }
     console.log(JSON.stringify(dataFromUser));
     localStorage.setItem(KEY_STORAGE, JSON.stringify(dataFromUser));
